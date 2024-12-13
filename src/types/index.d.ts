@@ -146,7 +146,7 @@ declare namespace api {
    */
   function unmap(
     /**
-     * a key sequence to be removed.
+     * A key sequence to be removed.
      */
     keystroke: string,
 
