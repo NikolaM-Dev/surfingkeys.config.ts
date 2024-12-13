@@ -194,7 +194,6 @@ declare namespace api {
 
   /**
    * Map a key sequence to another in insert mode.
-
    *
    * @see `map` to view a example.
    */
@@ -325,5 +324,105 @@ declare namespace api {
      * be removed.
      */
     domain?: string,
+  ): void;
+
+  type ICallbackToParseSuggestion = (
+    reponse: {
+      /**
+       * Holds the text of the response.
+       */
+      text: string;
+    },
+
+    request: {
+      /**
+       * Text of the query and `url` which is the formatted URL for the request
+       */
+      query?: string;
+    },
+  ) => void;
+
+  interface IAddSearchAliasOptions {
+    /**
+     * URL for favicon for this search engine.
+     */
+    favicon_url: string;
+
+    /**
+     * If `true` disable creating key mappings for this search engine.
+     */
+    skipMaps?: boolean;
+  }
+
+  /**
+   * Add a search engine alias into Omnibar.
+   *
+   * Example:
+   * ```js
+   * addSearchAlias(
+   *   'd',
+   *   'duckduckgo',
+   *   'https://duckduckgo.com/?q=',
+   *   's',
+   *   'https://duckduckgo.com/ac/?q=',
+   *   function (response) {
+   *     var res = JSON.parse(response.text);
+   *     return res.map(function (r) {
+   *       return r.phrase;
+   *     });
+   *   },
+   * );
+   * ```
+   */
+  function addSearchAlias(
+    /**
+     * The key to trigger this search engine, one or several chars, used as
+     * search alias, when you input the string and press space in omnibar, the
+     * search engine will be triggered.
+     */
+    alias: string,
+
+    /**
+     * A caption to be placed in front of the omnibar.
+     */
+    prompt: string,
+
+    /**
+     * The URL of the search engine, for example,
+     * `https://www.s.com/search.html?query=`, if there are extra parameters for
+     * the search engine, you can use it as
+     * `https://www.s.com/search.html?query={0}&type=cs` or
+     * `https://www.s.com/search.html?type=cs&query=`(since order of URL
+     * parameters usually does not matter).
+     */
+    searchUrl: string,
+
+    /**
+     * `<search_leader_key><alias>` in normal mode will search selected text with
+     * this search engine directly without opening the omnibar, for example
+     * `sd`. (optional, default `s`).
+     */
+    searchLeaderKey?: string | 's',
+
+    /**
+     * The URL to fetch suggestions in omnibar when this search engine is
+     * triggered.
+     */
+    suggestionUrl?: string,
+
+    /**
+     * A function to parse the response from `suggestionUrl` and return a list
+     * of strings as suggestions.
+     */
+    callbackToParseSuggestion?: ICallbackToParseSuggestion,
+
+    /**
+     * `<search_leader_key><only_this_site_key><alias>` in normal mode will
+     * search selected text within current site with this search engine directly
+     * without opening the omnibar, for example `sod`. (optional, default `o`).
+     */
+    onlyThisSiteKey?: string | 'o',
+
+    options?: IAddSearchAliasOptions,
   ): void;
 }
