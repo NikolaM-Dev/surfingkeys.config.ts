@@ -52,4 +52,28 @@ declare namespace api {
 
     options: IMapKeyOptions,
   ): void;
+
+  /**
+   * Create a shortcut in visual mode to execute your own action.
+   */
+  function vmapkey(
+    /**
+     * The key sequence for the shortcut.
+     */
+    keys: string,
+
+    /**
+     * A help message to describe the action, which will displayed in help
+     * opened by `?`.
+     */
+    annotation: string,
+
+    /**
+     * A Javascript function to be bound. If the function needs an argument,
+     * next pressed key will be fed to the function.
+     */
+    jscode: () => void,
+
+    options: IMapKeyOptions,
+  ): void;
 }
