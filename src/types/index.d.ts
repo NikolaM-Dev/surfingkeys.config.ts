@@ -252,4 +252,32 @@ declare namespace api {
      */
     newAnnotation?: string,
   ): void;
+
+  /**
+   * Map a key sequence to another in visual mode..
+   *
+   * @see `map` to view a example.
+   */
+  function vmap(
+    /**
+     * A key sequence to replace
+     */
+    newKeystroke: string,
+
+    /**
+     * A key sequence to be replaced
+     */
+    oldKeystroke: string,
+
+    /**
+     * A Javascript regex pattern to identify the domains that this mapping
+     * works.
+     */
+    domain?: string,
+
+    /**
+     * Use it instead of the annotation from old_keystroke if provided.
+     */
+    newAnnotation?: string,
+  ): void;
 }
