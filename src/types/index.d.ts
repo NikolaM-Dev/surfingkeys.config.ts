@@ -206,4 +206,22 @@ declare namespace api {
      */
     newAnnotation?: string,
   ): void;
+
+  /**
+   * Unmap a key sequence in insert mode..
+   *
+   * @see `unmap` to view a example.
+   */
+  function iunmap(
+    /**
+     * A key sequence to be removed.
+     */
+    keystroke: string,
+
+    /**
+     * A Javascript regex pattern to identify the domains that this mapping will
+     * be removed.
+     */
+    domain?: string,
+  ): void;
 }
