@@ -261,6 +261,24 @@ declare namespace api {
   ): void;
 
   /**
+   * Unmap a key sequence in visual mode.
+   *
+   * @see `unmap` to view a example.
+   */
+  function vunmap(
+    /**
+     * A key sequence to be removed.
+     */
+    keystroke: string,
+
+    /**
+     * A Javascript regex pattern to identify the domains that this mapping will
+     * be removed.
+     */
+    domain?: string,
+  ): void;
+
+  /**
    * Unmap all keybindings except those specified.
    *
    * Example:
