@@ -137,45 +137,59 @@ declare namespace api {
   ): void;
 
   /**
-   * Unmap a key sequence in visual mode.
+   * Map a key sequence to another in omnibar.
    *
-   * Example:
-   * ```js
-   * unmap("<<", /youtube.com/);
-   * ```
+   * @see `map` to view a example.
    */
-  function unmap(
+  function cmap(
     /**
-     * A key sequence to be removed.
+     * A key sequence to replace
      */
-    keystroke: string,
+    newKeystroke: string,
 
     /**
-     * A Javascript regex pattern to identify the domains that this mapping will
-     * be removed.
+     * A key sequence to be replaced
+     */
+    oldKeystroke: string,
+
+    /**
+     * A Javascript regex pattern to identify the domains that this mapping
+     * works.
      */
     domain?: string,
+
+    /**
+     * Use it instead of the annotation from old_keystroke if provided.
+     */
+    newAnnotation?: string,
   ): void;
 
   /**
-   * Unmap all keybindings except those specified.
+   * Map a key sequence to another in visual mode.
    *
-   * Example:
-   * ```js
-   * unmapAllExcept(['E','R','T'], /google.com|twitter.com/);
-   * ```
+   * @see `map` to view a example.
    */
-  function unmapAllExcept(
+  function vmap(
     /**
-     * Array the keybindings you want to keep.
+     * A key sequence to replace
      */
-    keystrokes: string[],
+    newKeystroke: string,
 
     /**
-     * A Javascript regex pattern to identify the domains that this mapping will
-     * be removed.
+     * A key sequence to be replaced
+     */
+    oldKeystroke: string,
+
+    /**
+     * A Javascript regex pattern to identify the domains that this mapping
+     * works.
      */
     domain?: string,
+
+    /**
+     * Use it instead of the annotation from old_keystroke if provided.
+     */
+    newAnnotation?: string,
   ): void;
 
   /**
@@ -208,7 +222,28 @@ declare namespace api {
   ): void;
 
   /**
-   * Unmap a key sequence in insert mode..
+   * Unmap a key sequence in visual mode.
+   *
+   * Example:
+   * ```js
+   * unmap("<<", /youtube.com/);
+   * ```
+   */
+  function unmap(
+    /**
+     * A key sequence to be removed.
+     */
+    keystroke: string,
+
+    /**
+     * A Javascript regex pattern to identify the domains that this mapping will
+     * be removed.
+     */
+    domain?: string,
+  ): void;
+
+  /**
+   * Unmap a key sequence in insert mode.
    *
    * @see `unmap` to view a example.
    */
@@ -226,58 +261,23 @@ declare namespace api {
   ): void;
 
   /**
-   * Map a key sequence to another in omnibar.
+   * Unmap all keybindings except those specified.
    *
-   * @see `map` to view a example.
+   * Example:
+   * ```js
+   * unmapAllExcept(['E','R','T'], /google.com|twitter.com/);
+   * ```
    */
-  function cmap(
+  function unmapAllExcept(
     /**
-     * A key sequence to replace
+     * Array the keybindings you want to keep.
      */
-    newKeystroke: string,
+    keystrokes: string[],
 
     /**
-     * A key sequence to be replaced
-     */
-    oldKeystroke: string,
-
-    /**
-     * A Javascript regex pattern to identify the domains that this mapping
-     * works.
+     * A Javascript regex pattern to identify the domains that this mapping will
+     * be removed.
      */
     domain?: string,
-
-    /**
-     * Use it instead of the annotation from old_keystroke if provided.
-     */
-    newAnnotation?: string,
-  ): void;
-
-  /**
-   * Map a key sequence to another in visual mode..
-   *
-   * @see `map` to view a example.
-   */
-  function vmap(
-    /**
-     * A key sequence to replace
-     */
-    newKeystroke: string,
-
-    /**
-     * A key sequence to be replaced
-     */
-    oldKeystroke: string,
-
-    /**
-     * A Javascript regex pattern to identify the domains that this mapping
-     * works.
-     */
-    domain?: string,
-
-    /**
-     * Use it instead of the annotation from old_keystroke if provided.
-     */
-    newAnnotation?: string,
   ): void;
 }
