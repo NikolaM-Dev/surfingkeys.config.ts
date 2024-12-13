@@ -55,6 +55,8 @@ declare namespace api {
 
   /**
    * Create a shortcut in visual mode to execute your own action.
+   *
+   * @see `mapkey` to view a example.
    */
   function vmapkey(
     /**
@@ -79,6 +81,8 @@ declare namespace api {
 
   /**
    * Create a shortcut in insert mode to execute your own action.
+   *
+   * @see `mapkey` to view a example.
    */
   function imapkey(
     /**
