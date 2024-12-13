@@ -2,6 +2,10 @@
   "name": "surfingkeys.ts",
   "module": "src/index.ts",
   "type": "module",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --minify --outfile=./dist/surfingkeys.config.js",
+    "build:watch": "esbuild src/index.ts --bundle --minify --watch --outfile=./dist/surfingkeys.config.js"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "esbuild": "0.24.0"
