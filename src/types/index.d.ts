@@ -185,8 +185,6 @@ declare namespace api {
    * @see `map` to view a example.
    */
   function imap(
-    // domain regex
-    // new_annotation string
     /**
      * A key sequence to replace.
      */
