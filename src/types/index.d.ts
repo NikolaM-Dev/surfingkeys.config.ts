@@ -152,4 +152,25 @@ declare namespace api {
      */
     domain?: string,
   ): void;
+
+  /**
+   * Unmap all keybindings except those specified.
+   *
+   * Example:
+   * ```js
+   * unmapAllExcept(['E','R','T'], /google.com|twitter.com/);
+   * ```
+   */
+  function unmapAllExcept(
+    /**
+     * Array the keybindings you want to keep.
+     */
+    keystrokes: string[],
+
+    /**
+     * A Javascript regex pattern to identify the domains that this mapping will
+     * be removed.
+     */
+    domain?: string,
+  ): void;
 }
