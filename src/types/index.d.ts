@@ -439,10 +439,6 @@ declare namespace api {
    * ```
    */
   function removeSearchAlias(
-    // alias string
-    // search_leader_key string
-    // only_this_site_key string
-
     /**
      * The alias of the search engine to be removed.
      */
