@@ -1,5 +1,5 @@
 {
-  "name": "surfingkeys.ts",
+  "name": "surfingkeys.config.ts",
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
