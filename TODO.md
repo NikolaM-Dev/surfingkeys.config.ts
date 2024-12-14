@@ -1,40 +1,40 @@
 # 🗺️Roadmap
 
-- [ ] Type api
-  - [6] mapkey
+- [6] Type api
+  - [x] mapkey
     - [x] Parameters
-    - [ ] Examples
-  - [ ] vmapkey
-    - [ ] Parameters
-  - [ ] imapkey
-    - [ ] Parameters
-  - [ ] map
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] unmap
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] unmapAllExcept
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] imap
-    - [ ] Parameters
-  - [ ] iunmap
-    - [ ] Parameters
-  - [ ] cmap
-    - [ ] Parameters
-  - [ ] vmap
-    - [ ] Parameters
-  - [ ] vunmap
-    - [ ] Parameters
-  - [ ] lmap
-    - [ ] Parameters
-  - [ ] addSearchAlias
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] removeSearchAlias
-    - [ ] Parameters
-    - [ ] Examples
+    - [x] Examples
+  - [x] vmapkey
+    - [x] Parameters
+  - [x] imapkey
+    - [x] Parameters
+  - [x] map
+    - [x] Parameters
+    - [x] Examples
+  - [x] unmap
+    - [x] Parameters
+    - [x] Examples
+  - [x] unmapAllExcept
+    - [x] Parameters
+    - [x] Examples
+  - [x] imap
+    - [x] Parameters
+  - [x] iunmap
+    - [x] Parameters
+  - [x] cmap
+    - [x] Parameters
+  - [x] vmap
+    - [x] Parameters
+  - [x] vunmap
+    - [x] Parameters
+  - [x] lmap
+    - [x] Parameters
+  - [x] addSearchAlias
+    - [x] Parameters
+    - [x] Examples
+  - [x] removeSearchAlias
+    - [x] Parameters
+    - [x] Examples
   - [ ] searchSelectedWith
     - [ ] Parameters
     - [ ] Examples
