@@ -1,3 +1,7 @@
+/**
+ * https://github.com/brookhong/Surfingkeys/blob/master/docs/API.md
+ * https://github.com/brookhong/Surfingkeys/blob/master/docs/command_message_flow.md
+ */
 declare namespace api {
   interface IMapKeyOptions {
     /**
