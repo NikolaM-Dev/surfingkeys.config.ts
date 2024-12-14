@@ -425,4 +425,37 @@ declare namespace api {
 
     options?: IAddSearchAliasOptions,
   ): void;
+
+  /**
+   * Remove a search engine alias from Omnibar.
+   *
+   * Example:
+   * ```js
+   * removeSearchAlias('d');
+   * ```
+   */
+  function removeSearchAlias(
+    // alias string
+    // search_leader_key string
+    // only_this_site_key string
+
+    /**
+     * The alias of the search engine to be removed.
+     */
+    alias: string,
+
+    /**
+     * `<search_leader_key><alias>` in normal mode will search selected text
+     * with this search engine directly without opening the omnibar, for example
+     * `sd`. (optional, default `s`).
+     */
+    searchLeaderKey?: string | 's',
+
+    /**
+     * `<search_leader_key><only_this_site_key><alias>` in normal mode will
+     * search selected text within current site with this search engine directly
+     * without opening the omnibar, for example `sod`. (optional, default `o`)
+     */
+    onlyThisSiteKey?: string | 'o',
+  ): void;
 }
