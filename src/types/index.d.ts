@@ -574,4 +574,29 @@ declare namespace api {
        */
       element: HTMLElement,
     ): void;
+
+    /**
+     * Click element or create hints for elements to click.
+     *
+     * Example:
+     * ```typescript
+     * mapkey('zz', 'Hide replies', function() {
+     *     Hints.click(document.querySelectorAll("#less-replies:not([hidden])"), true);
+     * });
+     * ```
+     */
+    function click(
+      /**
+       * Click on it if there is only one in the array or `force` parameter is
+       * `true`, otherwise hints will be generated for them. If `links` is a
+       * `string`, it will be used as css selector for `getClickableElements`.
+       */
+      links: string | HTMLElement[],
+
+      /**
+       * Force to click the first input element whether there are more than one
+       * elements in `links` or not. (optional, default `false`)
+       */
+      force: boolean,
+    ): void;
 }
