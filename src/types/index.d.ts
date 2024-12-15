@@ -526,4 +526,17 @@ declare namespace api {
       text: string,
     ): void;
   }
+
+  declare namespace Hints {
+    /**
+     * Use digits as hint label, with it set you could type text to filter
+     * links, this API is to replace original setting like
+     * `Hints.numericHints = true;`.
+     *
+     * Example:
+     * ```typescript
+     * Hints.setNumeric();
+     * ```
+     */
+    function setNumeric(): void;
 }
