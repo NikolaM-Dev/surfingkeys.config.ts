@@ -647,28 +647,25 @@ declare namespace Hints {
     attrs: ICreateAttrs | null,
   ): boolean;
 
+  /**
+   * Set styles for hints.
+   *
+   * Example:
+   * ```typescript
+   * Hints.style('border: solid 3px #552a48; color:#efe1eb; background: none; background-color: #552a48;');
+   * Hints.style("div{border: solid 3px #707070; color:#efe1eb; background: none; background-color: #707070;} div.begin{color:red;}", "text");
+   * ```
+   */
+  function style(
     /**
-     * Click element or create hints for elements to click.
-     *
-     * Example:
-     * ```typescript
-     * mapkey('zz', 'Hide replies', function() {
-     *     Hints.click(document.querySelectorAll("#less-replies:not([hidden])"), true);
-     * });
-     * ```
+     * Styles for hints.
      */
-    function click(
-      /**
-       * Click on it if there is only one in the array or `force` parameter is
-       * `true`, otherwise hints will be generated for them. If `links` is a
-       * `string`, it will be used as css selector for `getClickableElements`.
-       */
-      links: string | HTMLElement[],
+    css: string,
 
-      /**
-       * Force to click the first input element whether there are more than one
-       * elements in `links` or not. (optional, default `false`)
-       */
-      force: boolean,
-    ): void;
+    /**
+     * Sub mode for hints, use text for hints mode to enter visual mode.
+     * (optional, default `null`)
+     */
+    mode: string | null,
+  ): void;
 }
