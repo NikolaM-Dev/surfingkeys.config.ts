@@ -539,4 +539,20 @@ declare namespace api {
      * ```
      */
     function setNumeric(): void;
+
+    /**
+     * Set characters for generating hints, this API is to replace original
+     * setting like `Hints.characters = "asdgqwertzxcvb";`.
+     *
+     * Example:
+     * ```typescript
+     * Hints.setCharacters("asdgqwertzxcvb");
+     * ```
+     */
+    function setCharacters(
+      /**
+       * The characters for generating hints.
+       */
+      characters: string,
+    ): void;
 }
