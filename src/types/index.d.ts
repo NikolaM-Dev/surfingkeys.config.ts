@@ -510,4 +510,20 @@ declare namespace api {
        */
       onReady: () => void,
     ): void;
+
+    /**
+     * Write text to clipboard.
+     *
+     * Example:
+     * ```typescript
+     * Clipboard.write(window.location.href);
+     * ```
+     */
+    function write(
+      /**
+       * Text to be written to clipboard.
+       */
+      text: string,
+    ): void;
+  }
 }
