@@ -1,6 +1,6 @@
 # 🗺️Roadmap
 
-- [6] Type api
+- [ ] Type api
   - [x] mapkey
     - [x] Parameters
     - [x] Examples
@@ -35,32 +35,32 @@
   - [x] removeSearchAlias
     - [x] Parameters
     - [x] Examples
-  - [ ] searchSelectedWith
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] Clipboard.read
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] Clipboard.write
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] Hints.setNumeric
-    - [ ] Examples
-  - [ ] Hints.setCharacters
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] Hints.dispatchMouseClick
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] Hints.click
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] Hints.create
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] Hints.style
-    - [ ] Parameters
-    - [ ] Examples
+  - [x] searchSelectedWith
+    - [x] Parameters
+    - [x] Examples
+  - [x] Clipboard.read
+    - [x] Parameters
+    - [x] Examples
+  - [x] Clipboard.write
+    - [x] Parameters
+    - [x] Examples
+  - [x] Hints.setNumeric
+    - [x] Examples
+  - [x] Hints.setCharacters
+    - [x] Parameters
+    - [x] Examples
+  - [x] Hints.dispatchMouseClick
+    - [x] Parameters
+    - [x] Examples
+  - [x] Hints.click
+    - [x] Parameters
+    - [x] Examples
+  - [x] Hints.create
+    - [x] Parameters
+    - [x] Examples
+  - [x] Hints.style
+    - [x] Parameters
+    - [x] Examples
   - [ ] Normal.passThrough
     - [ ] Parameters
   - [ ] Normal.scroll
