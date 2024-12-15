@@ -492,4 +492,22 @@ declare namespace api {
      */
     alias?: string,
   ): void;
+
+  declare namespace Clipboard {
+    /**
+     * Read from clipboard
+     *
+     * Example:
+     * ```typescript
+     * Clipboard.read(function(response) {
+     *   console.log(response.data);
+     * });
+     * ```
+     */
+    function read(
+      /**
+       * A callback function to handle text read from clipboard.
+       */
+      onReady: () => void,
+    ): void;
 }
