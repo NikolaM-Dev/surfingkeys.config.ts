@@ -21,7 +21,7 @@ declare namespace api {
    * Create a shortcut in normal mode to execute your own action.
    *
    * Example:
-   * ```js
+   * ```typescript
    *  mapkey(
    *    '<Space>',
    *    'pause/resume on youtube',
@@ -52,7 +52,7 @@ declare namespace api {
      * A Javascript function to be bound. If the function needs an argument,
      * next pressed key will be fed to the function.
      */
-    jscode: () => void,
+    typescriptcode: () => void,
 
     options: IMapKeyOptions,
   ): void;
@@ -78,7 +78,7 @@ declare namespace api {
      * A Javascript function to be bound. If the function needs an argument,
      * next pressed key will be fed to the function.
      */
-    jscode: () => void,
+    typescriptcode: () => void,
 
     options: IMapKeyOptions,
   ): void;
@@ -113,7 +113,7 @@ declare namespace api {
    * Map a key sequence to another in normal mode.
    *
    * Example:
-   * ```js
+   * ```typescript
    * map(';d', '<Ctrl-Alt-d>');
    * ```
    */
@@ -256,7 +256,7 @@ declare namespace api {
    * Unmap a key sequence in visual mode.
    *
    * Example:
-   * ```js
+   * ```typescript
    * unmap("<<", /youtube.com/);
    * ```
    */
@@ -313,7 +313,7 @@ declare namespace api {
    * Unmap all keybindings except those specified.
    *
    * Example:
-   * ```js
+   * ```typescript
    * unmapAllExcept(['E','R','T'], /google.com|twitter.com/);
    * ```
    */
@@ -362,7 +362,7 @@ declare namespace api {
    * Add a search engine alias into Omnibar.
    *
    * Example:
-   * ```js
+   * ```typescript
    * addSearchAlias(
    *   'd',
    *   'duckduckgo',
@@ -370,7 +370,7 @@ declare namespace api {
    *   's',
    *   'https://duckduckgo.com/ac/?q=',
    *   function (response) {
-   *     var res = JSON.parse(response.text);
+   *     var res = typescriptON.parse(response.text);
    *     return res.map(function (r) {
    *       return r.phrase;
    *     });
@@ -434,7 +434,7 @@ declare namespace api {
    * Remove a search engine alias from Omnibar.
    *
    * Example:
-   * ```js
+   * ```typescript
    * removeSearchAlias('d');
    * ```
    */
@@ -454,7 +454,7 @@ declare namespace api {
     /**
      * `<search_leader_key><only_this_site_key><alias>` in normal mode will
      * search selected text within current site with this search engine directly
-     * without opening the omnibar, for example `sod`. (optional, default `o`)
+     * without opening the omnibar, for example `sod`. (optional, default `o`).
      */
     onlyThisSiteKey?: string | 'o',
   ): void;
@@ -469,29 +469,30 @@ declare namespace api {
    */
   function searchSelectedWith(
     /**
-     * A search engine's search URL
+     * A search engine's search URL.
      */
     se: string,
 
     /**
      * Whether to search only within current site, need support from the
-     * provided search engine. (optional, default `false`)
+     * provided search engine. (optional, default `false`).
      */
     onlyThisSite?: boolean,
 
     /**
      * Whether to search in interactive mode, in case that you need some small
-     * modification on the selected content. (optional, default `false`)
+     * modification on the selected content. (optional, default `false`).
      */
     interactive?: boolean,
 
     /**
      * Only used with interactive mode, in such case the url from `se` is
      * ignored, SurfingKeys will construct search URL from the alias
-     * registered by `addSearchAlias`. (optional, default `''`)
+     * registered by `addSearchAlias`. (optional, default `''`).
      */
     alias?: string,
   ): void;
+}
 
 declare namespace Clipboard {
   /**
