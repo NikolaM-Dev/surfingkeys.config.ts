@@ -493,38 +493,112 @@ declare namespace api {
     alias?: string,
   ): void;
 
-  declare namespace Clipboard {
+declare namespace Clipboard {
+  /**
+   * Read from clipboard
+   *
+   * Example:
+   * ```typescript
+   * Clipboard.read(function(response) {
+   *   console.log(response.data);
+   * });
+   * ```
+   */
+  function read(
     /**
-     * Read from clipboard
-     *
-     * Example:
-     * ```typescript
-     * Clipboard.read(function(response) {
-     *   console.log(response.data);
-     * });
-     * ```
+     * A callback function to handle text read from clipboard.
      */
-    function read(
-      /**
-       * A callback function to handle text read from clipboard.
-       */
-      onReady: () => void,
-    ): void;
+    onReady: () => void,
+  ): void;
+
+  /**
+   * Write text to clipboard.
+   *
+   * Example:
+   * ```typescript
+   * Clipboard.write(window.location.href);
+   * ```
+   */
+  function write(
+    /**
+     * Text to be written to clipboard.
+     */
+    text: string,
+  ): void;
+}
+
+declare namespace Hints {
+  /**
+   * Use digits as hint label, with it set you could type text to filter
+   * links, this API is to replace original setting like
+   * `Hints.numericHints = true;`.
+   *
+   * Example:
+   * ```typescript
+   * Hints.setNumeric();
+   * ```
+   */
+  function setNumeric(): void;
+
+  /**
+   * Set characters for generating hints, this API is to replace original
+   * setting like `Hints.characters = "asdgqwertzxcvb";`.
+   *
+   * Example:
+   * ```typescript
+   * Hints.setCharacters("asdgqwertzxcvb");
+   * ```
+   */
+  function setCharacters(
+    /**
+     * The characters for generating hints.
+     */
+    characters: string,
+  ): void;
+
+  /**
+   * The default `onHintKey` implementation.
+   *
+   * @see `Hints.create`
+   *
+   * Example:
+   * ```typescript
+   * mapkey('q', 'click on images', function() {
+   *     Hints.create("div.media_box img", Hints.dispatchMouseClick);
+   * }, {domain: /weibo.com/i});
+   * ```
+   */
+  function dispatchMouseClick(
+    /**
+     * The element for which the pressed hint is targeted.
+     */
+    element: HTMLElement,
+  ): void;
+
+  /**
+   * Click element or create hints for elements to click.
+   *
+   * Example:
+   * ```typescript
+   * mapkey('zz', 'Hide replies', function() {
+   *     Hints.click(document.querySelectorAll("#less-replies:not([hidden])"), true);
+   * });
+   * ```
+   */
+  function click(
+    /**
+     * Click on it if there is only one in the array or `force` parameter is
+     * `true`, otherwise hints will be generated for them. If `links` is a
+     * `string`, it will be used as css selector for `getClickableElements`.
+     */
+    links: string | HTMLElement[],
 
     /**
-     * Write text to clipboard.
-     *
-     * Example:
-     * ```typescript
-     * Clipboard.write(window.location.href);
-     * ```
+     * Force to click the first input element whether there are more than one
+     * elements in `links` or not. (optional, default `false`)
      */
-    function write(
-      /**
-       * Text to be written to clipboard.
-       */
-      text: string,
-    ): void;
+    force: boolean,
+  ): void;
   }
 
   declare namespace Hints {
