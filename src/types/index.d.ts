@@ -555,4 +555,23 @@ declare namespace api {
        */
       characters: string,
     ): void;
+
+    /**
+     * The default `onHintKey` implementation.
+     *
+     * @see `Hints.create`
+     *
+     * Example:
+     * ```typescript
+     * mapkey('q', 'click on images', function() {
+     *     Hints.create("div.media_box img", Hints.dispatchMouseClick);
+     * }, {domain: /weibo.com/i});
+     * ```
+     */
+    function dispatchMouseClick(
+      /**
+       * The element for which the pressed hint is targeted.
+       */
+      element: HTMLElement,
+    ): void;
 }
