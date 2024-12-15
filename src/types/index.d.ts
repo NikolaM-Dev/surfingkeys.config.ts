@@ -599,55 +599,53 @@ declare namespace Hints {
      */
     force: boolean,
   ): void;
+
+  interface ICreateAttrs {
+    /**
+     * Whether to activate the new tab when a link is opened.
+     */
+    active?: boolean;
+
+    /**
+     *  Whether to open a link in a new tab.
+     */
+    tabbed?: boolean;
+
+    /**
+     * Whether to stay in hints mode after one hint is triggered.
+     */
+    multipleHits?: boolean;
   }
 
-  declare namespace Hints {
+  /**
+   * Create hints for elements to click.
+   *
+   * @returns {boolean} whether any hint is created for target elements.
+   *
+   * @see `Hints.dispatchMouseClick`
+   *
+   * Example:
+   * ```typescript
+   * mapkey('yA', '#7Copy a link URL to the clipboard', function() {
+   *     Hints.create('*[href]', function(element) {
+   *         Clipboard.write('[' + element.innerText + '](' + element.href + ')');
+   *     });
+   * });
+   * ```
+   */
+  function create(
     /**
-     * Use digits as hint label, with it set you could type text to filter
-     * links, this API is to replace original setting like
-     * `Hints.numericHints = true;`.
-     *
-     * Example:
-     * ```typescript
-     * Hints.setNumeric();
-     * ```
+     * If `links` is a `string`, it will be used as css selector.
      */
-    function setNumeric(): void;
+    cssSelector: string | HTMLElement[],
 
     /**
-     * Set characters for generating hints, this API is to replace original
-     * setting like `Hints.characters = "asdgqwertzxcvb";`.
-     *
-     * Example:
-     * ```typescript
-     * Hints.setCharacters("asdgqwertzxcvb");
-     * ```
+     * A callback function on hint keys pressed.
      */
-    function setCharacters(
-      /**
-       * The characters for generating hints.
-       */
-      characters: string,
-    ): void;
+    onHintKey: () => void,
 
-    /**
-     * The default `onHintKey` implementation.
-     *
-     * @see `Hints.create`
-     *
-     * Example:
-     * ```typescript
-     * mapkey('q', 'click on images', function() {
-     *     Hints.create("div.media_box img", Hints.dispatchMouseClick);
-     * }, {domain: /weibo.com/i});
-     * ```
-     */
-    function dispatchMouseClick(
-      /**
-       * The element for which the pressed hint is targeted.
-       */
-      element: HTMLElement,
-    ): void;
+    attrs: ICreateAttrs | null,
+  ): boolean;
 
     /**
      * Click element or create hints for elements to click.
