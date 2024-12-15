@@ -458,4 +458,38 @@ declare namespace api {
      */
     onlyThisSiteKey?: string | 'o',
   ): void;
+
+  /**
+   * Search selected with.
+   *
+   * Example:
+   * ```typescript
+   * searchSelectedWith('https://translate.google.com/?hl=en#auto/en/');
+   * ```
+   */
+  function searchSelectedWith(
+    /**
+     * A search engine's search URL
+     */
+    se: string,
+
+    /**
+     * Whether to search only within current site, need support from the
+     * provided search engine. (optional, default `false`)
+     */
+    onlyThisSite?: boolean,
+
+    /**
+     * Whether to search in interactive mode, in case that you need some small
+     * modification on the selected content. (optional, default `false`)
+     */
+    interactive?: boolean,
+
+    /**
+     * Only used with interactive mode, in such case the url from `se` is
+     * ignored, SurfingKeys will construct search URL from the alias
+     * registered by `addSearchAlias`. (optional, default `''`)
+     */
+    alias?: string,
+  ): void;
 }
