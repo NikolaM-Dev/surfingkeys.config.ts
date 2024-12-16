@@ -932,3 +932,19 @@ function tabOpenLink(
    */
   simultaneousness: number,
 ): void;
+
+/**
+ * Insert javascript code into main world context.
+ */
+function insertJS(
+  /**
+   * A javascript function to be executed in main world context, or an URL of js
+   * file.
+   */
+  code: string | (() => void),
+
+  /**
+   * A callback function after requested code executed.
+   */
+  onLoad: () => void,
+): void;
