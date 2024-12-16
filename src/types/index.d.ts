@@ -866,3 +866,19 @@ declare namespace Front {
  * Get current browser name.
  */
 function getBrowserName(): 'Chrome' | 'Firefox' | 'Safari';
+
+/**
+ * Check whether an element is in viewport.
+ */
+function isElementPartiallyInViewport(
+  /**
+   * The element to be checked.
+   */
+  elment: HTMLElement,
+
+  /**
+   * Whether to ignore size of the element, otherwise the element must be with
+   * size 4*4. (optional, default false)
+   */
+  ignoreSize?: boolean,
+): boolean;
