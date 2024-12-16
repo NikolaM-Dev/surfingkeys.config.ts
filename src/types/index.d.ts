@@ -712,4 +712,15 @@ declare namespace Normal {
      */
     keys: string,
   );
+
+  /**
+   * Jump to a vim-like mark.
+   */
+  function jumpVIMark(
+    /**
+     * A vim-like mark.
+     */
+    mark: string,
+  ): void;
+}
 }
