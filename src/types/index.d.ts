@@ -1008,3 +1008,30 @@ function addVimMapKey(
    */
   objects: Rercod<string, any>,
 ): void;
+
+/**
+ * Call background `action` with `args`, the `callback` will be executed with
+ * response from background.
+ *
+ * Example:
+ * ```typescript
+ * RUNTIME('getTabs', {queryInfo: {currentWindow: true}}, response => {
+ *   console.log(response);
+ * });
+ * ```
+ */
+function RUNTIME(
+  /**
+   * A background action to be called.
+   */
+  action: string,
+
+  /**
+   * A object the parameters to be passed to the background action.
+   */
+  args: Record<string, any>,
+  /**
+   * A function to be executed with the result from the background action.
+   */
+  callback: () => void,
+): void;
