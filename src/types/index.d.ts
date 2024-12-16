@@ -948,3 +948,28 @@ function insertJS(
    */
   onLoad: () => void,
 ): void;
+
+/**
+ * Map the key sequence `lhs` to `rhs` for mode `ctx` in ACE editor.
+ *
+ * Example:
+ * ```typescript
+ * aceVimMap('J', ':bn', 'normal');
+ * ```
+ */
+function aceVimMap(
+  /**
+   * A key sequence to replace.
+   */
+  lhs: string,
+
+  /**
+   * A key sequence to be replaced.
+   */
+  rhs: string,
+
+  /**
+   * A mode such as `insert`, `normal`.
+   */
+  ctx: string,
+): void;
