@@ -670,3 +670,16 @@ declare namespace Hints {
     mode: string | null,
   ): void;
 }
+
+declare namespace Normal {
+  /**
+   * Enter PassThrough mode.
+   */
+  function passThrough(
+    /**
+     * How many milliseconds to linger in PassThrough mode, to ignore it will
+     stay in PassThrough mode until an `escape` key is pressed.
+     */
+    timeout?: number,
+  ): void;
+}
