@@ -824,4 +824,25 @@ declare namespace Front {
    * @see https://github.com/brookhong/Surfingkeys/wiki/Register-inline-query
    */
   function registerInlineQuery(args: IRegisterInlineQueryOptions): void;
+
+  /**
+   * Show message in banner.
+   *
+   * Example:
+   * ```typescript
+   * Front.showBanner(window.location.href);
+   * ```
+   */
+  function showBanner(
+    /**
+     * The message to be displayed in banner.
+     */
+    message: string,
+
+    /**
+     * Milliseconds after which the banner will disappear. (optional, default
+     * `1600`)
+     */
+    timeout?: number,
+  ): void;
 }
