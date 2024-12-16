@@ -882,3 +882,28 @@ function isElementPartiallyInViewport(
    */
   ignoreSize?: boolean,
 ): boolean;
+
+/**
+ * Get all clickable elements. SurfingKeys has its own logic to identify
+ * clickable elements, such as a `HTMLAnchorElement` or elements with cursor as
+ * pointer. This function provides two parameters to identify those clickable
+ * elements that SurfingKeys failed to identify.
+ *
+ * @returns {HTMLElement[]} all clickable elements.
+ *
+ * Example:
+ * ```typescript
+ * const clickableElements = getClickableElements("[rel=link]", /click this/);
+ * ```
+ */
+function getClickableElements(
+  /**
+   * Axtra css selector of those clickable elements.
+   */
+  cssSelector: string,
+
+  /**
+   * A regular expression that matches text of the clickable elements.
+   */
+  pattern: RegExp,
+): HTMLElement[];
