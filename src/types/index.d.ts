@@ -702,4 +702,14 @@ declare namespace Normal {
       | 'rightmost'
       | 'byRatio',
   ): void;
+
+  /**
+   * Feed keys into Normal mode.
+   */
+  function feedkeys(
+    /**
+     * The keys to be fed into Normal mode.
+     */
+    keys: string,
+  );
 }
