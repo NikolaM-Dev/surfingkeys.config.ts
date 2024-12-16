@@ -907,3 +907,28 @@ function getClickableElements(
    */
   pattern: RegExp,
 ): HTMLElement[];
+
+/**
+ * Open links in new tabs.
+ *
+ * Example:
+ * ```typescript
+ * mapkey("<Space>", "pause/resume on youtube", function() {
+ *     var btn = document.querySelector("button.ytp-ad-overlay-close-button") || document.querySelector("button.ytp-ad-skip-button") || document.querySelector('ytd-watch-flexy button.ytp-play-button');
+ *     btn.click();
+ * }, {domain: /youtube.com/i});
+ * ```
+ */
+function tabOpenLink(
+  /**
+   * Links to be opened, the links should be split by `\n` if there are more
+   * than one.
+   */
+  links: string,
+
+  /**
+   * How many tabs will be opened simultaneously, the rest will be queued and
+   opened later whenever a tab is closed. (optional, default `5`)
+   */
+  simultaneousness: number,
+): void;
