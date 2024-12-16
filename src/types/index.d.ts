@@ -798,4 +798,30 @@ declare namespace Front {
    * ```
    */
   function openOmnibar(args: IOpenOmnibarOptions): void;
+
+  interface IRegisterInlineQueryOptions {
+    /**
+     * The dictionary service url or a function to return the dictionary service
+     * url.
+     */
+    url: string | (() => string);
+
+    /**
+     * A function to parse result from dictionary service and return a HTML
+     * string to render explanation
+     */
+    parseResult: () => string;
+
+    /**
+     * In case your dictionary service needs authentication
+     */
+    headers?: Record<string, string>;
+  }
+
+  /**
+   * Register an inline query.
+   *
+   * @see https://github.com/brookhong/Surfingkeys/wiki/Register-inline-query
+   */
+  function registerInlineQuery(args: IRegisterInlineQueryOptions): void;
 }
