@@ -682,4 +682,24 @@ declare namespace Normal {
      */
     timeout?: number,
   ): void;
+
+  /**
+   * Scroll within current target.
+   */
+  function scroll(
+    type:
+      | 'down'
+      | 'up'
+      | 'pageDown'
+      | 'fullPageDown'
+      | 'pageUp'
+      | 'fullPageUp'
+      | 'top'
+      | 'bottom'
+      | 'left'
+      | 'right'
+      | 'leftmost'
+      | 'rightmost'
+      | 'byRatio',
+  ): void;
 }
