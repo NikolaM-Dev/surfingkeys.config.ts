@@ -973,3 +973,38 @@ function aceVimMap(
    */
   ctx: string,
 ): void;
+
+/**
+ * Add map key in ACE editor.
+ *
+ * Example:
+ * ```typescript
+ * addVimMapKey(
+ *     {
+ *         keys: 'n',
+ *         type: 'motion',
+ *         motion: 'moveByCharacters',
+ *         motionArgs: {
+ *             forward: false
+ *         }
+ *     },
+ *
+ *     {
+ *         keys: 'e',
+ *         type: 'motion',
+ *         motion: 'moveByLines',
+ *         motionArgs: {
+ *             forward: true,
+ *             linewise: true
+ *         }
+ *     }
+ * );
+ * ```
+ */
+function addVimMapKey(
+  /**
+   * Multiple objects to define key map in ACE, see more from
+   * [ace/keyboard/vim.js](https://github.com/ajaxorg/ace/blob/ec450c03b51aba3724cf90bb133708078d1f3de6/lib/ace/keyboard/vim.js#L927-L1099)
+   */
+  objects: Rercod<string, any>,
+): void;
