@@ -61,29 +61,29 @@
   - [x] Hints.style
     - [x] Parameters
     - [x] Examples
-  - [ ] Normal.passThrough
-    - [ ] Parameters
-  - [ ] Normal.scroll
-    - [ ] Parameters
-  - [ ] Normal.feedkeys
-    - [ ] Parameters
-  - [ ] Normal.jumpVIMark
-    - [ ] Parameters
-  - [ ] Visual.style
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] Front.openOmnibar
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] Front.registerInlineQuery
-    - [ ] Parameters
+  - [x] Normal.passThrough
+    - [x] Parameters
+  - [x] Normal.scroll
+    - [x] Parameters
+  - [x] Normal.feedkeys
+    - [x] Parameters
+  - [x] Normal.jumpVIMark
+    - [x] Parameters
+  - [x] Visual.style
+    - [x] Parameters
+    - [x] Examples
+  - [x] Front.openOmnibar
+    - [x] Parameters
+    - [x] Examples
+  - [x] Front.registerInlineQuery
+    - [x] Parameters
   - [ ] getBrowserName
-  - [ ] Front.showBanner
-    - [ ] Parameters
-    - [ ] Examples
-  - [ ] Front.showPopup
-    - [ ] Parameters
-    - [ ] Examples
+  - [x] Front.showBanner
+    - [x] Parameters
+    - [x] Examples
+  - [x] Front.showPopup
+    - [x] Parameters
+    - [x] Examples
   - [ ] isElementPartiallyInViewport
     - [ ] Parameters
   - [ ] getClickableElements
