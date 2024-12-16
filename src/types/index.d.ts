@@ -861,3 +861,8 @@ declare namespace Front {
     message: string,
   ): void;
 }
+
+/**
+ * Get current browser name.
+ */
+function getBrowserName(): 'Chrome' | 'Firefox' | 'Safari';
