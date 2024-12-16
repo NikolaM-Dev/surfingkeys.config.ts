@@ -746,4 +746,56 @@ declare namespace Visual {
     style: string,
   ): void;
 }
+
+declare namespace Front {
+  interface IOpenOmnibarOptions {
+    /**
+     * The sub type for the omnibar
+     */
+    type:
+      | 'Bookmarks'
+      | 'AddBookmark'
+      | 'History'
+      | 'URLs'
+      | 'RecentlyClosed'
+      | 'TabURLs'
+      | 'Tabs'
+      | 'Windows'
+      | 'VIMarks'
+      | 'SearchEngine'
+      | 'Commands'
+      | 'OmniQuery'
+      | 'UserURLs';
+
+    /**
+     * TODO: Find out what this is for.
+     */
+    extra: any[];
+  }
+
+  /**
+   * Open the omnibar.
+   *
+   * Example:
+   * ```typescript
+   * mapkey('ou', '#8Open AWS services', function() {
+   *     var services = Array.from(top.document.querySelectorAll('#awsc-services-container li[data-service-href]')).map(function(li) {
+   *         return {
+   *             title: li.querySelector("span.service-label").textContent,
+   *             url: li.getAttribute('data-service-href')
+   *         };
+   *     });
+   *     if (services.length === 0) {
+   *         services = Array.from(top.document.querySelectorAll('div[data-testid="awsc-nav-service-list"] li[data-testid]>a')).map(function(a) {
+   *             return {
+   *                 title: a.innerText,
+   *                 url: a.href
+   *             };
+   *         });
+   *     }
+   *     Front.openOmnibar({type: "UserURLs", extra: services});
+   * }, {domain: /console.amazonaws|console.aws.amazon.com/i});
+   * ```
+   */
+  function openOmnibar(args: IOpenOmnibarOptions): void;
 }
