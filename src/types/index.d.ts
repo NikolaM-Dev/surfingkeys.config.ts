@@ -845,4 +845,19 @@ declare namespace Front {
      */
     timeout?: number,
   ): void;
+
+  /**
+   * Show message in popup.
+   */
+  function showPopup(
+    /**
+     * The message to be displayed in popup.
+     *
+     * Example:
+     * ```typescript
+     * Front.showPopup(window.location.href);
+     * ```
+     */
+    message: string,
+  ): void;
 }
