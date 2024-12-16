@@ -723,4 +723,27 @@ declare namespace Normal {
     mark: string,
   ): void;
 }
+
+declare namespace Visual {
+  /**
+   * Set styles for visual mode.
+   *
+   * Example:
+   * ```typescript
+   * Visual.style('marks', 'background-color: #89a1e2;');
+   * Visual.style('cursor', 'background-color: #9065b7;');
+   * ```
+   */
+  function style(
+    /**
+     * Element in visual mode, which can be marks and cursor.
+     */
+    element: string,
+
+    /**
+     * CSS style for the element.
+     */
+    style: string,
+  ): void;
+}
 }
