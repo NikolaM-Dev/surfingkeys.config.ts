@@ -54,7 +54,7 @@ declare namespace api {
      */
     typescriptcode: () => void,
 
-    options: IMapKeyOptions,
+    options?: IMapKeyOptions,
   ): void;
 
   /**
@@ -494,7 +494,7 @@ declare namespace api {
   ): void;
 }
 
-declare namespace Clipboard {
+declare namespace api.Clipboard {
   /**
    * Read from clipboard
    *
@@ -528,7 +528,7 @@ declare namespace Clipboard {
   ): void;
 }
 
-declare namespace Hints {
+declare namespace api.Hints {
   /**
    * Use digits as hint label, with it set you could type text to filter
    * links, this API is to replace original setting like
@@ -671,7 +671,7 @@ declare namespace Hints {
   ): void;
 }
 
-declare namespace Normal {
+declare namespace api.Normal {
   /**
    * Enter PassThrough mode.
    */
@@ -724,7 +724,7 @@ declare namespace Normal {
   ): void;
 }
 
-declare namespace Visual {
+declare namespace api.Visual {
   /**
    * Set styles for visual mode.
    *
@@ -747,7 +747,7 @@ declare namespace Visual {
   ): void;
 }
 
-declare namespace Front {
+declare namespace api.Front {
   interface IOpenOmnibarOptions {
     /**
      * The sub type for the omnibar
