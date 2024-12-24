@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "esbuild src/index.ts --bundle --minify --outfile=./dist/surfingkeys.config.js",
-    "build:watch": "esbuild src/index.ts --bundle --minify --watch --outfile=./dist/surfingkeys.config.js"
+    "build:watch": "esbuild src/index.ts --bundle --minify --watch --outfile=./dist/surfingkeys.config.js",
+    "firefox": "serve ./dist"
   },
   "devDependencies": {
     "@types/bun": "latest",
