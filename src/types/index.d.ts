@@ -1035,3 +1035,15 @@ function RUNTIME(
    */
   callback: () => void,
 ): void;
+
+declare namespace settings {
+  /**
+   * TODO: Add comments
+   */
+  let theme: string;
+
+  /**
+   * TODO: Add comments
+   */
+  let blocklistPattern: RegExp;
+}
