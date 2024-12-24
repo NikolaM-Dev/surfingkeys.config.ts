@@ -9,7 +9,7 @@ declare namespace api {
      * works, for example, `/github\.com/i` says that this mapping works
      * only for github.com.
      */
-    domain: string;
+    domain: RegExp;
 
     /**
      * Whether this action can be repeated by dot command.
@@ -270,7 +270,7 @@ declare namespace api {
      * A Javascript regex pattern to identify the domains that this mapping will
      * be removed.
      */
-    domain?: string,
+    domain?: RegExp,
   ): void;
 
   /**
