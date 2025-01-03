@@ -8,3 +8,13 @@ api.mapkey('<Ctrl-a>', 'Increase speed', () => {
 
   api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
 });
+
+api.mapkey('<Ctrl-x>', 'Decrement speed', () => {
+  let video = document.querySelector('video');
+
+  if (!video) return;
+
+  video.playbackRate = video.playbackRate - 0.1;
+
+  api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
+});
