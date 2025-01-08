@@ -29,7 +29,7 @@ api.mapkey('<Backspace>rs', '[R]eset [S]peed', () => {
   api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
 });
 
-api.mapkey('<Backspace>ps', '[P]refered [S]peed', () => {
+api.mapkey('<Backspace>ps', '[P]referred [S]peed', () => {
   const video = document.querySelector('video');
 
   if (!video) return;
