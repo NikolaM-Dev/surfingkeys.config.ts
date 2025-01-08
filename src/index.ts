@@ -18,3 +18,13 @@ api.mapkey('<Ctrl-x>', 'Decrement speed', () => {
 
   api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
 });
+
+api.mapkey('<Backspace>rs', '[R]eset [S]peed', () => {
+  let video = document.querySelector('video');
+
+  if (!video) return;
+
+  video.playbackRate = 1;
+
+  api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
+});
