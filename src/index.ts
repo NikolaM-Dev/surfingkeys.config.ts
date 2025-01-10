@@ -1,4 +1,12 @@
 console.log('Hello via Bun!');
+api.mapkey('<Backspace>yl', '[Y]ank [L]ink', () => {
+  const title = document.title;
+  const href = window.location.href;
+  const markdownLink = `[${title}](${href})`;
+
+  api.Clipboard.write(markdownLink);
+});
+
 api.mapkey('<Ctrl-a>', 'Increase speed', () => {
   let video = document.querySelector('video');
 
