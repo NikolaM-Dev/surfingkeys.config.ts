@@ -38,3 +38,24 @@ api.mapkey('<Backspace>ps', '[P]referred [S]peed', () => {
 
   api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
 });
+
+api.mapkey(
+  '<Backspace>ut',
+  '[U]n[T]rap WhatsApp',
+  () => {
+    const elementsToRemove: string[] = [
+      '[aria-label="Status"]',
+      '[aria-label="Channels"]',
+      '[aria-label="Communities"]',
+    ];
+
+    elementsToRemove.forEach((selector) => {
+      const element = document.querySelector(selector);
+
+      if (element) element.remove();
+    });
+  },
+  {
+    domain: /web.whatsapp.com/,
+  },
+);
