@@ -1,4 +1,5 @@
 console.log('Hello via Bun!');
+api.unmap('<Ctrl-h>');
 api.unmap('s', /track.toggl.com\/timer/);
 api.mapkey('<Backspace>yl', '[Y]ank [L]ink', () => {
   const title = document.title;
