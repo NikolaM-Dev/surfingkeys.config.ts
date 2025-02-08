@@ -68,14 +68,13 @@ api.mapkey(
   '<Backspace>ut',
   '[U]n[T]rap WhatsApp',
   () => {
-    const elementsToRemove: string[] = [
+    const SELECTORS: string[] = [
       '[aria-label="Status"]',
       '[aria-label="Channels"]',
       '[aria-label="Communities"]',
     ];
 
-    elementsToRemove.forEach((selector) => {
-      const element = document.querySelector(selector);
+    toggleElements(SELECTORS);
 
       if (element) element.remove();
     });
