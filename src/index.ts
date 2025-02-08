@@ -55,6 +55,15 @@ function toggleElement<T extends HTMLElement>(element: T): void {
     ? (element.style.display = 'block')
     : (element.style.display = 'none');
 }
+
+function toggleElements(selectors: string[]): void {
+  selectors.forEach((selector) => {
+    const element: HTMLElement | null = document.querySelector(selector);
+
+    if (element) toggleElement(element);
+  });
+}
+
 api.mapkey(
   '<Backspace>ut',
   '[U]n[T]rap WhatsApp',
