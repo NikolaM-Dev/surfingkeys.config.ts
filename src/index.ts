@@ -48,6 +48,13 @@ api.mapkey('<Backspace>ps', '[P]referred [S]peed', () => {
   api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
 });
 
+// [U]n[T]rap
+
+function toggleElement<T extends HTMLElement>(element: T): void {
+  element.style.display === 'none'
+    ? (element.style.display = 'block')
+    : (element.style.display = 'none');
+}
 api.mapkey(
   '<Backspace>ut',
   '[U]n[T]rap WhatsApp',
