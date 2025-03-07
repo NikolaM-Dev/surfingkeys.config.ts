@@ -8,8 +8,8 @@ api.mapkey('<Backspace>yl', '[Y]ank [L]ink', () => {
   api.Clipboard.write(markdownLink);
 });
 
-api.mapkey('<Ctrl-a>', 'Increase speed', () => {
-  let video = document.querySelector('video');
+api.mapkey("<Ctrl-a>", "Increase speed", () => {
+  const video = document.querySelector("video");
 
   if (!video) return;
 
@@ -18,8 +18,8 @@ api.mapkey('<Ctrl-a>', 'Increase speed', () => {
   api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
 });
 
-api.mapkey('<Ctrl-x>', 'Decrement speed', () => {
-  let video = document.querySelector('video');
+api.mapkey("<Ctrl-x>", "Decrement speed", () => {
+  const video = document.querySelector("video");
 
   if (!video) return;
 
@@ -28,8 +28,8 @@ api.mapkey('<Ctrl-x>', 'Decrement speed', () => {
   api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
 });
 
-api.mapkey('<Backspace>rs', '[R]eset [S]peed', () => {
-  let video = document.querySelector('video');
+api.mapkey("<Backspace>rs", "[R]eset [S]peed", () => {
+  const video = document.querySelector("video");
 
   if (!video) return;
 
@@ -38,8 +38,8 @@ api.mapkey('<Backspace>rs', '[R]eset [S]peed', () => {
   api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
 });
 
-api.mapkey('<Backspace>ps', '[P]referred [S]peed', () => {
-  const video = document.querySelector('video');
+api.mapkey("<Backspace>ps", "[P]referred [S]peed", () => {
+  const video = document.querySelector("video");
 
   if (!video) return;
 
