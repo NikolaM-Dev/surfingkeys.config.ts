@@ -6,6 +6,12 @@ import { youTubeUnTrap } from "./untrap/youtube";
   const markdownLink = `[${title}](${href})`;
 
   api.Clipboard.write(markdownLink);
+api.mapkey("<Backspace>yl", "[Y]ank [L]ink", () => {
+  const title = getPageTitle();
+  const href = getPageURL();
+  const orgLink = `[[${href}][${title}]]`;
+
+  api.Clipboard.write(orgLink);
 });
 
 api.mapkey("<Ctrl-a>", "Increase speed", () => {
