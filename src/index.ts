@@ -1,11 +1,38 @@
 import { getPageTitle, getPageURL } from "./page";
 import { whatsAppUntrap } from "./untrap/whatsapp";
 import { youTubeUnTrap } from "./untrap/youtube";
-  const title = document.title;
-  const href = window.location.href;
-  const markdownLink = `[${title}](${href})`;
 
-  api.Clipboard.write(markdownLink);
+// TODO: Review
+settings.theme = "";
+
+// TODO: Review
+// api.unmap("x");
+
+// Don't active surfingkeys in this domains
+settings.blocklistPattern =
+  /(trello|ticktick|excalidraw|calendar\.google).com/i;
+
+// Preserve history keymap
+api.unmap("<Ctrl-h>");
+
+// Preserve downloads keymap
+api.unmap("<Ctrl-j>");
+
+// Use default s `keymap in track.toggl.com/timer` Toggl
+api.unmap("s", /track.toggl.com\/timer/);
+
+// I don't want multipliers
+api.unmap("0");
+api.unmap("1");
+api.unmap("2");
+api.unmap("3");
+api.unmap("4");
+api.unmap("5");
+api.unmap("6");
+api.unmap("7");
+api.unmap("8");
+api.unmap("9");
+
 api.mapkey("<Backspace>yl", "[Y]ank [L]ink", () => {
   const title = getPageTitle();
   const href = getPageURL();
