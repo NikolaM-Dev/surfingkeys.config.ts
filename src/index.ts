@@ -10,7 +10,7 @@ settings.theme = "";
 
 // Don't active surfingkeys in this domains
 settings.blocklistPattern =
-  /(trello|ticktick|excalidraw|calendar\.google).com/i;
+  /(trello|ticktick|excalidraw|calendar\.google|docs\.google).com/i;
 
 // Preserve history keymap
 api.unmap("<Ctrl-h>");
