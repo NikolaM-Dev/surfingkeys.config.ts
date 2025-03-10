@@ -9,5 +9,11 @@ export function getPageTitle(): string {
 }
 
 export function getPageURL(): string {
-  return window.location.href;
+  const pageUrl = window.location.href;
+
+  if (pageUrl.includes("youtube") && pageUrl.includes("&list")) {
+    return pageUrl.split("&list")[0];
+  }
+
+  return pageUrl;
 }
