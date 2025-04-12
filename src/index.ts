@@ -76,7 +76,7 @@ api.mapkey("<Backspace>ps", "[P]referred [S]peed", () => {
 
   if (!video) return;
 
-  video.playbackRate = 1.6;
+  video.playbackRate = 1.4;
 
   api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
 });
