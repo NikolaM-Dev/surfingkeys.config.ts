@@ -36,9 +36,9 @@ api.unmap("9");
 api.mapkey("<Backspace>yl", "[Y]ank [L]ink", () => {
   const title = getPageTitle();
   const href = getPageURL();
-  const orgLink = `[[${href}][${title}]]`;
+  const link = `[${title}](${href})`;
 
-  api.Clipboard.write(orgLink);
+  api.Clipboard.write(link);
 });
 
 api.mapkey("<Ctrl-a>", "Increase speed", () => {
