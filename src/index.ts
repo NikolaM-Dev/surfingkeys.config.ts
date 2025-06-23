@@ -1,3 +1,4 @@
+import { getBlocklistPatternRegExp } from "./lib";
 import { getPageTitle, getPageURL } from "./page";
 import { whatsAppUntrap } from "./untrap/whatsapp";
 import { youTubeUnTrap } from "./untrap/youtube";
@@ -9,8 +10,13 @@ settings.theme = "";
 // api.unmap("x");
 
 // Don't active surfingkeys in this domains
-settings.blocklistPattern =
-  /(trello|ticktick|excalidraw|calendar\.google|docs\.google).com/i;
+settings.blocklistPattern = getBlocklistPatternRegExp([
+  "https://calendar.google.com",
+  "https://docs.google.com",
+  "https://excalidraw.com",
+  "https://ticktick.com",
+  "https://trello.com",
+]);
 
 // Preserve history keymap
 api.unmap("<Ctrl-h>");
