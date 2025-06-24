@@ -14,6 +14,11 @@ settings.blocklistPattern = getBlocklistPatternRegExp([
   "https://calendar.google.com",
   "https://docs.google.com",
   "https://excalidraw.com",
+  "https://gemini.google.com",
+  "https://keep.google.com",
+  "https://mail.google.com",
+  "https://nikolam-dev.atlassian.net",
+  "https://tasks.google.com",
   "https://ticktick.com",
   "https://trello.com",
 ]);
