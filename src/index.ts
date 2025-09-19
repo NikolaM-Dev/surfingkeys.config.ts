@@ -11,6 +11,7 @@ settings.theme = "";
 
 // Don't active surfingkeys in this domains
 settings.blocklistPattern = getBlocklistPatternRegExp([
+  "https://app.todoist.com",
   "https://calendar.google.com",
   "https://docs.google.com",
   "https://excalidraw.com",
