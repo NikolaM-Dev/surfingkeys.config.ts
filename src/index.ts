@@ -21,6 +21,7 @@ settings.blocklistPattern = getBlocklistPatternRegExp([
   "https://nikolam-dev.atlassian.net",
   "https://tasks.google.com",
   "https://ticktick.com",
+  "https://track.toggl.com/timer",
   "https://trello.com",
 ]);
 
@@ -30,8 +31,6 @@ api.unmap("<Ctrl-h>");
 // Preserve downloads keymap
 api.unmap("<Ctrl-j>");
 
-// Use default s `keymap in track.toggl.com/timer` Toggl
-api.unmap("s", /track.toggl.com\/timer/);
 
 // I don't want multipliers
 api.unmap("0");
