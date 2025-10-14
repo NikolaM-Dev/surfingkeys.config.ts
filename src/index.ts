@@ -31,6 +31,8 @@ api.unmap("<Ctrl-h>");
 // Preserve downloads keymap
 api.unmap("<Ctrl-j>");
 
+// Preserve switch to sixth workspace
+api.unmap("<Ctrl-6>");
 
 // I don't want multipliers
 api.unmap("0");
