@@ -17,6 +17,7 @@ settings.blocklistPattern = getBlocklistPatternRegExp([
   "https://excalidraw.com",
   "https://gemini.google.com",
   "https://keep.google.com",
+  "https://linear.app",
   "https://mail.google.com",
   "https://nikolam-dev.atlassian.net",
   "https://tasks.google.com",
