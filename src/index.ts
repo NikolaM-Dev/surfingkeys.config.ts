@@ -3,8 +3,7 @@ import { getPageTitle, getPageURL } from "./page";
 import { whatsAppUntrap } from "./untrap/whatsapp";
 import { youTubeUnTrap } from "./untrap/youtube";
 
-// TODO: Review
-settings.theme = "";
+settings.theme = rosePineTeme;
 
 // TODO: Review
 // api.unmap("x");
