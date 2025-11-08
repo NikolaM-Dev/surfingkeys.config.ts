@@ -5,10 +5,11 @@ import { rosePineTeme } from './themes';
 import { whatsAppUntrap } from './untrap/whatsapp';
 import { youTubeUnTrap } from './untrap/youtube';
 
-settings.theme = rosePineTeme;
+api.Hints.style(hintsCSS);
+api.Hints.style(hintsCSS, 'text');
 
-// TODO: Review
-// api.unmap("x");
+settings.theme = rosePineTeme;
+settings.tabsThreshold = 0; // Always search tabs using omnibar
 
 // Don't active surfingkeys in this domains
 settings.blocklistPattern = getBlocklistPatternRegExp([
