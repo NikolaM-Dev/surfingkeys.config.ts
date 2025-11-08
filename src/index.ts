@@ -72,8 +72,30 @@ api.mapkey('<Ctrl-x>', 'Decrement speed', () => {
   api.Front.showBanner(`${video.playbackRate.toFixed(1)}x`);
 });
 
-api.mapkey("<Backspace>rs", "[R]eset [S]peed", () => {
-  const video = document.querySelector("video");
+function seekBy(video: HTMLVideoElement, seconds: number): void {
+  if (!video.duration || isNaN(video.duration)) return;
+  const target = Math.min(
+    Math.max(0, video.currentTime + seconds),
+    video.duration,
+  );
+
+  video.currentTime = target;
+}
+
+api.mapkey('<Alt-a>', 'Fast forward 5 seconds', () => {
+  const video = document.querySelector('video');
+  if (!video) return;
+
+  seekBy(video, 5);
+});
+
+api.mapkey('<Alt-x>', 'Rewind 5 seconds', () => {
+  const video = document.querySelector('video');
+  if (!video) return;
+
+  seekBy(video, -5);
+});
+
 api.mapkey('<Backspace>rs', '[R]eset [S]peed', () => {
   const video = document.querySelector('video');
 
