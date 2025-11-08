@@ -1,15 +1,15 @@
-import { toggleElements } from "./lib";
+import { toggleElements } from './lib';
 
 const DOMAIN: RegExp = /www.youtube.com/;
 
 export function youTubeUnTrap() {
   api.mapkey(
-    "<Backspace>ut",
-    "[U]n[T]rap WhatsApp",
+    '<Backspace>ut',
+    '[U]n[T]rap WhatsApp',
     () => {
       toggleElements({
-        selectors: ["#secondary-inner > #related"],
-        title: "YouTube",
+        selectors: ['#secondary-inner > #related'],
+        title: 'YouTube',
       });
     },
     {

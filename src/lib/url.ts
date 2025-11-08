@@ -1,11 +1,11 @@
 export function getBlocklistPatternRegExp(urls: string[]): RegExp {
   if (!Array.isArray(urls) || urls.length === 0) {
-    throw new Error("Input must be a non-empty array of URLs.");
+    throw new Error('Input must be a non-empty array of URLs.');
   }
 
   // Escape special regex characters in a string
   const escapeRegExp = (payload: string): string => {
-    return payload.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the matched substring
+    return payload.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the matched substring
   };
 
   const domainPatterns = urls
@@ -13,7 +13,7 @@ export function getBlocklistPatternRegExp(urls: string[]): RegExp {
       try {
         const { hostname } = new URL(url);
         // Remove 'www.' prefix if it exists for broader matching
-        const cleanedHostname = hostname.startsWith("www.")
+        const cleanedHostname = hostname.startsWith('www.')
           ? hostname.substring(4)
           : hostname;
 
@@ -25,7 +25,7 @@ export function getBlocklistPatternRegExp(urls: string[]): RegExp {
         // but for docs.google.com, it will specifically match docs.google.com.
         // If you always want to match subdomains for *any* URL,
         // you could simplify this.
-        const parts = escapedHostname.split(".");
+        const parts = escapedHostname.split('.');
         if (parts.length > 2) {
           // If it has multiple subdomains (e.g., docs.google.com),
           // we'll match it exactly.
@@ -42,13 +42,13 @@ export function getBlocklistPatternRegExp(urls: string[]): RegExp {
     .filter(Boolean); // Remove null values from invalid URLs
 
   if (domainPatterns.length === 0) {
-    return new RegExp("a^", "i"); // Return a regex that matches nothing if no valid URLs
+    return new RegExp('a^', 'i'); // Return a regex that matches nothing if no valid URLs
   }
 
   // Combine the patterns with OR
-  const regexString = domainPatterns.join("|");
+  const regexString = domainPatterns.join('|');
 
   // Create a RegExp object with case-insensitive flag
   // It matches if the URL contains any of the domains
-  return new RegExp(regexString, "i");
+  return new RegExp(regexString, 'i');
 }

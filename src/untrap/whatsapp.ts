@@ -1,11 +1,11 @@
-import { toggleElements } from "./lib";
+import { toggleElements } from './lib';
 
 const DOMAIN: RegExp = /web.whatsapp.com/;
 
 export function whatsAppUntrap(): void {
   api.mapkey(
-    "<Backspace>ut",
-    "[U]n[T]rap WhatsApp",
+    '<Backspace>ut',
+    '[U]n[T]rap WhatsApp',
     () => {
       toggleElements({
         selectors: [
@@ -13,7 +13,7 @@ export function whatsAppUntrap(): void {
           '[aria-label="Channels"]',
           '[aria-label="Communities"]',
         ],
-        title: "WhatsApp",
+        title: 'WhatsApp',
       });
     },
     {

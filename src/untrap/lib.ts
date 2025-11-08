@@ -1,7 +1,7 @@
 export function toggleElement<T extends HTMLElement>(element: T): void {
-  element.style.display === "none"
-    ? (element.style.display = "block")
-    : (element.style.display = "none");
+  element.style.display === 'none'
+    ? (element.style.display = 'block')
+    : (element.style.display = 'none');
 }
 
 export function toggleElements(payload: {
