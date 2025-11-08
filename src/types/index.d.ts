@@ -132,7 +132,7 @@ declare namespace api {
      * A Javascript regex pattern to identify the domains that this mapping
      * works.
      */
-    domain?: string,
+    domain?: string | null,
 
     /**
      * Use it instead of the annotation from old_keystroke if provided.
@@ -667,7 +667,7 @@ declare namespace api.Hints {
      * Sub mode for hints, use text for hints mode to enter visual mode.
      * (optional, default `null`)
      */
-    mode: string | null,
+    mode?: string | null,
   ): void;
 }
 
