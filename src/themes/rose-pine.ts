@@ -1,4 +1,4 @@
-export const rosePineTeme = `
+const theme = `
 .sk_theme {
   background: #232136;
   color: #e0def4;
@@ -446,3 +446,11 @@ div.sk_arrow[dir='up'] > div:nth-of-type(2) {
   }
 }
 `;
+
+const hintsCSS =
+  "background-color: #232136; background: #232136; border: 1px solid #56526e; color: #e0def4 !important; font-family: 'Maple Mono NF', 'JetBrains Mono NL', 'Cascadia Code', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+
+export const rosePine = {
+  hintsCSS,
+  theme,
+};

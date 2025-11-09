@@ -1,14 +1,13 @@
 import { getBlocklistPatternRegExp } from './lib';
 import { getPageTitle, getPageURL } from './page';
-import { hintsCSS } from './style';
-import { rosePineTeme } from './themes';
+import { rosePine } from './themes';
 import { whatsAppUntrap } from './untrap/whatsapp';
 import { youTubeUnTrap } from './untrap/youtube';
 
-api.Hints.style(hintsCSS);
-api.Hints.style(hintsCSS, 'text');
+api.Hints.style(rosePine.hintsCSS);
+api.Hints.style(rosePine.hintsCSS, 'text');
 
-settings.theme = rosePineTeme;
+settings.theme = rosePine.theme;
 settings.tabsThreshold = 0; // Always search tabs using omnibar
 
 // Don't active surfingkeys in this domains
