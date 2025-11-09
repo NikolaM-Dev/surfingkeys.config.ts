@@ -1,8 +1,7 @@
 import { getBlocklistPatternRegExp } from './lib';
 import { getPageTitle, getPageURL } from './page';
 import { rosePine } from './themes';
-import { whatsAppUntrap } from './untrap/whatsapp';
-import { youTubeUnTrap } from './untrap/youtube';
+import { whatsAppUntrap, youTubeUnTrap } from './untrap';
 
 api.Hints.style(rosePine.hintsCSS);
 api.Hints.style(rosePine.hintsCSS, 'text');
