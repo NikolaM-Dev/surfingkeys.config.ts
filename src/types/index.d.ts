@@ -1046,4 +1046,10 @@ declare namespace settings {
    * TODO: Add comments
    */
   let blocklistPattern: RegExp;
+
+  /**
+   * When total of opened tabs exceeds settings.tabsThreshold, omnibar will be
+   * used for choosing tabs.
+   */
+  let tabsThreshold = number;
 }
